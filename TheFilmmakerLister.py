@@ -9,8 +9,18 @@ cursor = connection.cursor()
 #import linux os calls
 import os
 
-rows = cursor.execute("SELECT name, link FROM girls WHERE name = name")
-for row in rows:
-	print(row)
+#rows = cursor.execute("SELECT name, link FROM girls WHERE name = name")
+#or row in rows:
+#	print(row)
+#print(rows)
+
+searchName = "Amber"
+selection = cursor.execute("SELECT name from girls")
+for row in selection:
+	inputer = (row[0])
+	print(row[1])
+	
+
+	
 
 connection.close()
