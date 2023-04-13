@@ -73,4 +73,9 @@ for dirname in os.listdir(userdir):
 	print("------------")
 	photodir = ("users/" + dirname)
 	for photo in os.listdir(photodir):
+		record = ("home/maisom/Documents/GitHub/mediaManager/users/" + dirname + "/" + photo)
+		print(record)
+		cursor.execute("INSERT OR IGNORE INTO photos (name, link) values (?, ?)", [dirname, record])
 		print(photo)
+
+connection.commit() 
