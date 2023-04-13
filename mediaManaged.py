@@ -14,10 +14,12 @@ import os
 #Collecting the name.
 
 
-selection = cursor.execute("SELECT name, link from girls")
+selection = cursor.execute("SELECT name, link, age, location from girls")
 for row in selection:
 	userName = (row[0])
 	image = (row[1])
+	age = (row[2])
+	location = (row[3])
 	fileName = ("pages/" + userName + ".html")
 	print(row[0])
 	print(fileName)
@@ -41,9 +43,9 @@ for row in selection:
 
 	f.write("Name: "), f.write(userName)
 	f.write("<br>")
-	f.write("Age:  ")
+	f.write("Age:  "), f.write(str(age))
 	f.write("<br>")
-	f.write("Location:  ")
+	f.write("Location:  "), f.write(location)
 	f.write('''
 	<br>
 	<br>
@@ -61,3 +63,14 @@ for row in selection:
 
 #Close file.
 	f.close()
+
+
+# Listing photo files
+userdir = "users/"
+for dirname in os.listdir(userdir):
+	print("------------")
+	print(dirname)
+	print("------------")
+	photodir = ("users/" + dirname)
+	for photo in os.listdir(photodir):
+		print(photo)
