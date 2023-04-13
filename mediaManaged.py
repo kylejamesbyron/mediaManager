@@ -24,6 +24,8 @@ for row in selection:
 	print(row[0])
 	print(fileName)
 	f = open(fileName, 'w')
+
+
 # Create pages:
 
 #create header
@@ -50,7 +52,7 @@ for row in selection:
 	<br>
 	<br>
 	<br>	
-	<img style="width: 232px; height: 280px;" alt="Profile Picture"
+	<img style="width: 516px; height: 368px;" alt="profile"
 	src="file://''')
 	
 	f.write(image)
@@ -68,6 +70,7 @@ for row in selection:
 # Listing photo files
 userdir = "users/"
 for dirname in os.listdir(userdir):
+	cursor.execute("INSERT OR IGNORE INTO girls (name) values (?)", [dirname])
 	print("------------")
 	print(dirname)
 	print("------------")
