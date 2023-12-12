@@ -10,31 +10,6 @@ cursor = connection.cursor()
 #import linux os calls
 import os
 
-# Import sqlite and os calls
-
-import sqlite3
-connection = sqlite3.connect("girls.db")
-cursor = connection.cursor()
-
-#import flask
-
-from flask import Flask
-from flask import send_file
-from flask import render_template
-from flask import request
-import os
-from flask import session
-import datetime
-from datetime import datetime
-from datetime import date
-from datetime import time 
-from flask import redirect
-
-
-app = Flask(__name__)
-app.secret_key = 'dljsaklqk24e21cjn!Ew@@dsa5'
-# End of opening
-
 
 #Collecting the name.
 
